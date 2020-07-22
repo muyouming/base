@@ -40,3 +40,10 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pyrfc exchangelib xlrd
 
 RUN conda install pymssql pymysql -y
+
+ADD clouderahiveodbc_2.5.25.1020-2_amd64.deb /tmp
+RUN dpkg -i /tmp/clouderahiveodbc_2.5.25.1020-2_amd64.deb
+
+# add odbc driver
+ADD odbcinst.ini /etc/
+ADD odbc.ini /etc/
