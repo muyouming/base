@@ -39,5 +39,4 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pyrfc exchangelib xlrd
 
-RUN conda install pandas pymssql jupyter jupyterlab  -y
-RUN conda install pymysql -y
+RUN conda install pymssql pymysql -y
