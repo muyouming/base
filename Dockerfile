@@ -37,8 +37,8 @@ ENV TZ=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 
-RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pyrfc exchangelib xlrd
+RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pyrfc exchangelib xlrd presto-python-client
 
-RUN conda install pymssql  presto-python-client pymysql -y
+RUN conda install pymssql  pymysql -y
 
 ADD presto.cer /usr/presto.cer
